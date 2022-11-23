@@ -17,6 +17,7 @@ except ValueError:
     print("Not a number")
 
 ser = serial.Serial(ports[indice].device)
+print("non sono ancora esploso")
 if ser.isOpen():
     ser.close()
 ser = serial.Serial(ports[indice].device, 9600, timeout=1)

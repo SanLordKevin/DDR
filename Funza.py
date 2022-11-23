@@ -24,10 +24,15 @@ try:
 except ValueError:
     print("Not a number")
 
+print("non sono ancora esploso1")
 ser = serial.Serial(ports[indice].device)
+print("non sono ancora esploso2")
 if ser.isOpen():
     ser.close()
+print("non sono ancora esploso3")
+
 ser = serial.Serial(ports[indice].device, 9600, timeout=1)
+print("non sono ancora esploso")
 ser.flushInput()
 ser.flushOutput()
 print('Connesso alla porta: ' + ser.name)
@@ -45,13 +50,15 @@ while(True):
 
     tastiPremuti = [i for i,d in enumerate(tasti) if d == 1]
     tastiNonPremuti = [i for i, d in enumerate(tasti) if d != 1]
-    #print(f"byte letto: {byteLetto}")
-    #print(f"Tasti: {tasti}")
-    #print(f"Tasti premuti: {tastiPremuti}")
-    for tasto in tastiPremuti:
-        keyboard.press(keyBindings[tasto])
+    print(f"byte letto: {byteLetto}")
+    print(f"Tasti: {tasti}")
+    print(f"Tasti premuti: {tastiPremuti}")
+    #for tasto in tastiPremuti:
+        #keyboard.press(keyBindings[tasto])
+        #print(keyBindings[tasto] + " ", end='')
 
-    for tasto in tastiNonPremuti:
-        keyboard.release(keyBindings[tasto])
+    #print("fine riga")
+    #for tasto in tastiNonPremuti:
+        #keyboard.release(keyBindings[tasto])
 
 
